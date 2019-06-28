@@ -19,9 +19,11 @@ from . import views
 from haystack.forms import ModelSearchForm
 from haystack.query import SearchQuerySet
 from haystack.views import SearchView
+from django.views.generic.base import RedirectView
 
 app_name = "blog"
 urlpatterns = [
+    path(r'favicon.ico',RedirectView.as_view(url=r'static/favicon.ico')),
     path(r'', views.IndexView.as_view(), name='index'),
     path(r'page/<int:page>/', views.IndexView.as_view(), name='index_page'),
 
@@ -41,5 +43,5 @@ urlpatterns = [
     path(r'tag/<slug:tag_name>/<int:page>.html', views.TagDetailView.as_view(), name='tag_detail_page'),
     path('archives.html', views.ArchivesView.as_view(), name='archives'),
     path(r'upload', views.fileupload, name='upload'),
-    path(r'refresh', views.refresh_memcache, name='refresh')
+    path(r'refresh', views.refresh_memcache, name='refresh'),
 ]

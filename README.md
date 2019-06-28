@@ -17,6 +17,8 @@
 - 网站异常邮件提醒，若有未捕捉到的异常会自动发送提醒邮件。
 - 集成了微信公众号功能，现在可以使用微信公众号来管理你的vps了。
 ## 安装
+git clone git://github.com/liangliangyy/DjangoBlog.git
+
 使用pip安装：  
 `pip install -Ur requirements.txt`
 
